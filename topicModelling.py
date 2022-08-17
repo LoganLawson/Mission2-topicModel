@@ -30,7 +30,7 @@ def trainTopicModel(document_term_matrix):
         document_term_matrix (pandas.DataFrame): bag of words for topic modelling
     """
     # Parameters tuning using Grid Search
-    grid_params = {'n_components' : [5, 20, 100]}
+    grid_params = {'n_components' : range(10,20)}
     # LDA model
     lda = LatentDirichletAllocation()
     lda_model = GridSearchCV(lda,param_grid=grid_params)
